@@ -1,5 +1,5 @@
-require 'core.options' -- Load general options
-require 'core.keymaps' -- Load general keymaps
+require 'core.options'  -- Load general options
+require 'core.keymaps'  -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 
 -- Install package manager
@@ -16,6 +16,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.o.clipboard = 'unnamedplus'
 -- Import color theme based on environment variable NVIM_THEME
 local default_color_scheme = 'nord'
 local env_var_nvim_theme = os.getenv 'NVIM_THEME' or default_color_scheme
